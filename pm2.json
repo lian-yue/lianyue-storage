@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "cosmoe-storage",
+    "name": "lianyue-storage",
     "script": "./bin/www",
     "exec_mode": "cluster",
     "instances": 0,
