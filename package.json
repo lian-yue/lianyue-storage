@@ -1,0 +1,44 @@
+{
+  "name": "lianyue-storage",
+  "version": "0.1.5",
+  "private": true,
+  "author": "lianyue <admin@lianyue.org>",
+  "description": "",
+  "main": "app/index.js",
+  "scripts": {
+    "start-node": "cross-env NODE_ENV=production node ./bin/www",
+    "start": "pm2 start pm2.json",
+    "restart": "pm2 restart pm2.json",
+    "stop": "pm2 stop pm2.json",
+    "status": "pm2 list pm2.json",
+    "dev": "cross-env NODE_ENV=development node ./bin/www",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --colors --config  webpack.config.js"
+  },
+  "engines": {
+    "node": ">= 4"
+  },
+  "dependencies": {
+    "cross-env": "^2.0.0",
+    "gm": "^1.22.0",
+    "koa": "^2.0.0",
+    "koa-send": "^3.2.0",
+    "koa-static": "^3.0.0",
+    "log4js": "^0.6.38",
+    "pm2": "^1.1.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-runtime": "^6.9.2",
+    "json-loader": "^0.5.4",
+    "null-loader": "^0.1.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
