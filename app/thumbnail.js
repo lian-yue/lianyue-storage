@@ -56,7 +56,7 @@ function thumbnailPromise(original, thumbnail, args, extension) {
     var image = gm(original + (extension == 'gif' ? '' : '[0]'));
     image.size((err, size) => {
       if (err) {
-        resolve(err);
+        reject(err);
         return;
       }
       var srcWidth = size.width
