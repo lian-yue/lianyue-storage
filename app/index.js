@@ -79,7 +79,7 @@ app.use(async function(ctx, next) {
   await next()
   var ms = new Date - start;
   var userAgent = ctx.request.header['user-agent'] || '';
-  options.logger.info(`${ctx.method} ${ctx.status} ${ctx.url} - ${ms}ms - ${ctx.ip} - ${userAgent}`);
+  console.log(`${ctx.method} ${ctx.status} ${ctx.url} - ${ms}ms - ${ctx.ip} - ${userAgent}`);
 });
 
 
@@ -90,9 +90,9 @@ app.use(thumbnail);
 // 错误捕获
 app.on('error', function(err, ctx) {
   if (err.status >= 500) {
-    options.logger.error('server error :', err, ctx);
-  } else if (app.env === 'development') {
-    options.logger.error(err.message + ' - ' + ctx.url);
+    console.error('server error :', err, ctx);
+  } else {
+    console.warn(`${ctx.method} ${ctx.status} ${ctx.url} - ${ctx.request.ip} - ${err.message}`);
   }
 });
 
