@@ -3,9 +3,6 @@ const path = require("path");
 
 module.exports = {
 
-  // 日志
-  logger: logger,
-
   original: path.join(__dirname, '../storage/'),
 
   thumbnail: path.join(__dirname, '../thumbnails/'),
